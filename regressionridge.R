@@ -1,7 +1,7 @@
 # Written by Filiz Karadag, Ege University, Dept. of Statistics,
 # Izmir,Turkey.
 
-# Ridge regression
+
 Ridge.reg <- function(x,y,c) {
   
   dimx <- dim(x)
