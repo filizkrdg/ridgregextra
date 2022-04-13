@@ -1,7 +1,7 @@
 # Written by Filiz Karadag, Ege University, Dept. of Statistics,
 # Izmir,Turkey.
 
-
+#Olgun deneme
 Ridge.reg <- function(x,y,c) {
   
   dimx <- dim(x)
