@@ -13,7 +13,7 @@ devtools::install_github("filizkrdg/Ridge_Reg",
                           ref="main",
                           auth_token = "your_access_token"
                           )
-library(ciaor)                          
+library(Ridge_Reg)                          
                         
 ```
 
