@@ -18,7 +18,7 @@ library(ciaor)
 ```
 
 
-## Installing the package using Github Desktop
+## Installing the package using Github Desktop (Recomended)
 
 - Please install Github Desktop (https://desktop.github.com/)
 - Clone the repository
