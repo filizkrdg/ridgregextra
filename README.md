@@ -20,7 +20,7 @@ library(ciaor)
 
 ## Installing the package using Github Desktop
 
-- Please install Github Desktop
+- Please install Github Desktop (https://desktop.github.com/)
 - Clone the repository
 - Open the project
 - Run the following command
