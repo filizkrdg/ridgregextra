@@ -22,7 +22,7 @@ library(Ridge_Reg)
 
 - Please install Github Desktop (https://desktop.github.com/)
 - Clone the repository
-- Open the project
+- Open the project in RStudio
 - Run the following command
 
 ```

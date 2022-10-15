@@ -3,6 +3,8 @@ ridgereg_k <- function(x,y,a,b) {
   if ((a>b) | (a<0) | (b>1)){
     print('Wrong input, please try again!')
     return(ridgereg.k)
+    #TODO: Add checking for dimension of X. if it is less than 2, dont proceed with
+    # the calculations.
     
   } else {
     
