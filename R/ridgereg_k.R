@@ -2,10 +2,16 @@ ridgereg_k <- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
     print('Wrong input, please try again!')
-    return(ridgereg.k)
-    #TODO: Add checking for dimension of X. if it is less than 2, dont proceed with
-    # the calculations.
+    return(ridgereg.k) }
     
+  if ((is.vector(x)) ) {
+     print('Dimension of explanatory variables is not suitable')
+     return(ridgereg.k) }
+        
+   if (dim(x)[2]<=1) {
+     print('Dimension of explanatory variables is not suitable')
+     return(ridgereg.k)
+        
   } else {
     
     for (j in 1:4) {
