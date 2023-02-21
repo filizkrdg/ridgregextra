@@ -49,6 +49,8 @@ ridge_reg <- function(x,y,c) {
       } 
       y=yy }
   }
+  x=as.matrix(x)
+  y=as.matrix(y)
   
   yr <- scale(y)/sqrt(n-1)
   xr <- scale(x)/sqrt(n-1)
