@@ -1,9 +1,55 @@
 ridge_reg <- function(x,y,c) {
   
-  #Standard Ridge Regression
-  dimx <- dim(x)
-  n <- dimx[1]
-  p <- dimx[2]
+  #Standard Ridge Regression 
+  #check point for type of x and y
+   if (is.vector(x)){
+    n=length(x)
+    p=1
+    x=t(x)
+    x=t(x)
+    
+  } else {
+    n=dim(x)[1]
+    p=dim(x)[2]
+    
+    if(p==1) {
+      
+      x=x[,1]
+      x=t(x)
+      x=t(x)
+      
+    } else {
+      
+      colind=2
+      xx=cbind(x[,1],x[,2])
+      while(colind<p) {
+        colind=colind+1
+        xx=cbind(xx,x[,colind])
+      } 
+      x=xx }
+  }
+  
+  if (is.vector(y)){
+    y=t(y)
+    y=t(y)
+  } else {
+    cy=dim(y)[2]
+    if(cy==1) {
+      
+      y=y[,1]
+      y=t(y)
+      y=t(y)
+      
+    } else {
+      
+      colind=2
+      yy=cbind(y[,1],y[,2])
+      while(colind<cy) {
+        colind=colind+1
+        yy=cbind(yy,y[,colind])
+      } 
+      y=yy }
+  }
   
   yr <- scale(y)/sqrt(n-1)
   xr <- scale(x)/sqrt(n-1)
