@@ -33,7 +33,7 @@ ridgereg_k <- function(x,y,a,b) {
           break
         }
       }
-      
+    
       
       b <- k[i]
       a<-k[i-1]
@@ -48,6 +48,47 @@ ridgereg_k <- function(x,y,a,b) {
   
   ridgereg <- ridge_reg(x,y,k[i-1])
   ridgereg$k=k[i-1]
+  last_k=ridgereg$k
   
+  k_vif=vif.k(x,y,0,last_k)$k_vif
+  k_beta=vif.k(x,y,0,last_k)$k_beta
+  k_stdbeta =vif.k(x,y,0,last_k)$k_stdbeta
+  
+  print(k_vif)
+  print(k_beta)
+  print(k_stdbeta)
+
+  vif_plot <- plot_ly(k_vif, x= ~k)
+  ridgetrace_plot = plot_ly(k_beta, x= ~k)
+  stdbeta_plot = plot_ly(k_stdbeta, x= ~k)
+  
+  for(i in 2:dim(k_vif)[2])
+  {
+    ktrace_name <- paste("Vif.x",i-1,sep="")
+    dfk <- data.frame(vif=k_vif[,i], k=k_vif$k)
+    vif_plot <-vif_plot %>% add_trace(data = dfk, y = ~vif, x = ~k,name = ktrace_name,mode='lines+markers')
+    
+    betatrace_name = paste("beta",i-1,sep="")
+    dfk_beta = data.frame(Beta=k_beta[,i], k=k_beta$k)
+    ridgetrace_plot =  ridgetrace_plot %>% add_trace(data = dfk_beta, y = ~Beta, x = ~k,name = betatrace_name,mode='lines+markers')
+    
+    stdbetatrace_name = paste("stdbeta.x",i-1,sep="")
+    dfk_stdbeta = data.frame(StdBeta=k_stdbeta[,i], k=k_stdbeta$k)
+    stdbeta_plot = stdbeta_plot %>% add_trace(data = dfk_stdbeta, y = ~StdBeta, x = ~k,name = stdbetatrace_name,mode='lines+markers')
+  }
+  fig <- subplot(vif_plot, ridgetrace_plot, stdbeta_plot, titleX = TRUE, titleY = TRUE, nrows = 3) %>% 
+    layout(title = "vif & Ridge trace & stdbeta",
+           plot_bgcolor='#e5ecf6', 
+           xaxis = list( 
+             zerolinecolor = '#ffff', 
+             zerolinewidth = 2, 
+             gridcolor = 'ffff'), 
+           yaxis = list( 
+             zerolinecolor = '#ffff', 
+             zerolinewidth = 2, 
+             gridcolor = 'ffff'))
+  
+  #    fig <- fig %>%layout(annotations = annotations) 
+  print(fig)
   return(ridgereg)
 }
