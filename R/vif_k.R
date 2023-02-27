@@ -9,10 +9,13 @@ vif_k<- function(x,y,a,b) {
     
     k1 <- seq(a,b,length=11)
     k <- as.matrix(k1)
-    
     v <- matrix(0,11,dim(x)[2])
+    R2=matrix(0,11,1)
+    betaa=matrix(0,11,(dim(x)[2]))
+    stdbetaa=matrix(0,11,(dim(x)[2]))
+    mse=matrix(0,11,1)
     
-    all_results <- NULL
+   # all_results <- NULL
     for (i in 1:11) 
       {
       
@@ -20,24 +23,45 @@ vif_k<- function(x,y,a,b) {
       diagVIF <- as.matrix(diag(VIF))
       tdiagVIF <- t(diagVIF)
       v[i,] <- tdiagVIF[1,]
+      
+      R2[i]<- Ridge.reg(x,y,k[i])$R2
+      beta <- Ridge.reg(x,y,k[i])$beta
+      stdbeta = Ridge.reg(x,y,k[i])$stdbeta
+      stdbeta = as.matrix(stdbeta)
+      tbeta=t(beta)
+      tstdbeta=t(stdbeta)
+      
+      betaa[i,]=tbeta[1,]
+      stdbetaa[i,] = tstdbeta[1,]
+   
+      mse[i] <- Ridge.reg(x,y,k[i])$MSE
+      
     }
+    colnames(v)=paste("vif.x",1:dim(x)[2],sep="")
+    colnames(betaa)=paste("beta",1:dim(x)[2],sep="")
+    colnames(stdbetaa)=paste("stdbeta",1:dim(x)[2],sep="")
+    k=data.frame(k)
+    v=data.frame(v)
+    R2=data.frame(R2)
+    mse=data.frame(mse)
+    betaa=data.frame(betaa)
+    stdbetaa=data.frame(stdbetaa)
     
-    k_v <- as.data.frame(cbind(k,v))
+    viftable = as.data.frame.array(cbind(k,v,mse,R2))
+    betatable=as.data.frame.array(cbind(k,betaa))
+    stdbetatable=as.data.frame.array(cbind(k,stdbetaa))
     
-    #TODO: Fix colname assignment. Should happen inside of loop
-    colnames(k_v) <- c("k",paste("VIF.", colnames(x),sep=""))
-  
-    bar_plot <- plot_ly(type = 'bar')
-
-    for(i in 2:dim(k_v)[2])
-    {
-      trace_name <- paste("VIF.x",i-1,sep="")
-      dfk <- data.frame(y=k_v[,i], k=k_v$k)
-      bar_plot <- bar_plot %>% add_trace(data = dfk, y = ~y, x = ~k,name = trace_name)
-    }
+    mse = viftable[,(dim(x)[2]+2)]
+    
+    k_vif = as.data.frame.array(viftable[,1:(dim(x)[2]+1)])
+    k_beta = betatable
+    k_stdbeta = stdbetatable
+    k_mse=as.data.frame((cbind(k,mse)))
+    
   }
-  bar_plot <- bar_plot %>% layout(yaxis = list(title = 'VIF'), barmode = 'group')
-  bar_plot <- bar_plot %>% layout(xaxis = list(title = 'k'), barmode = 'group')
-  print(bar_plot)
-  return(k_v)
+
+  z <- list(viftable = viftable,betatable=betatable,stdbetatable=stdbetatable,
+            k_vif=k_vif,k_mse=k_mse, k_beta= k_beta,k_stdbeta=k_stdbeta)
+  return(z)
 }
+   
