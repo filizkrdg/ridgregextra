@@ -1,4 +1,4 @@
-ridge_reg <- function(x,y,c) {
+ridge_reg <- function(x,y,k) {
   
   #Standard Ridge Regression
   if (is.vector(x)){
@@ -56,13 +56,13 @@ ridge_reg <- function(x,y,c) {
   xr <- scale(x)/sqrt(n-1)
   X <- xr
   XpX <- t(X)%*%X
-  XpXplusc <- XpX+c*diag(p)
+  XpXplusk <- XpX+k*diag(p)
   
   Xpy <- t(X)%*%yr
   p1 <- qr(XpX)$rank-1
   
-  invXpXplusc <- solve(XpXplusc)
-  beta <- invXpXplusc%*%Xpy
+  invXpXplusk <- solve(XpXplusk)
+  beta <- invXpXplusk%*%Xpy
   
   tsdx <- apply(x,2,sd)
   betaor <- sd(y)*beta/as.matrix(tsdx)
@@ -97,9 +97,9 @@ ridge_reg <- function(x,y,c) {
   F <- MSR/MSE
   sig <- 1-pf(F,p,n-(p+1))
   
-  varbeta=invXpXplusc*MSE
+  varbeta=invXpXplusk*MSE
   stdbeta <- sqrt(diag(varbeta))
-  VIF=invXpXplusc%*%XpX%*%invXpXplusc
+  VIF=invXpXplusk%*%XpX%*%invXpXplusk
   
   aF <- c(F,NA,NA)
   asig <- c(sig,NA,NA)
