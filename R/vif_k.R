@@ -3,7 +3,7 @@ vif_k<- function(x,y,a,b) {
   if ((a>b) | (a<0) | (b>1)){
     print('Wrong input, please try again!')
     
-    return(vif.k)
+    return(vif_k)
     
   } else {
     
@@ -24,9 +24,9 @@ vif_k<- function(x,y,a,b) {
       tdiagVIF <- t(diagVIF)
       v[i,] <- tdiagVIF[1,]
       
-      R2[i]<- Ridge.reg(x,y,k[i])$R2
-      beta <- Ridge.reg(x,y,k[i])$beta
-      stdbeta = Ridge.reg(x,y,k[i])$stdbeta
+      R2[i]<- ridge_reg(x,y,k[i])$R2
+      beta <- ridge_reg(x,y,k[i])$beta
+      stdbeta = ridge_reg(x,y,k[i])$stdbeta
       stdbeta = as.matrix(stdbeta)
       tbeta=t(beta)
       tstdbeta=t(stdbeta)
@@ -34,7 +34,7 @@ vif_k<- function(x,y,a,b) {
       betaa[i,]=tbeta[1,]
       stdbetaa[i,] = tstdbeta[1,]
    
-      mse[i] <- Ridge.reg(x,y,k[i])$MSE
+      mse[i] <- ridge_reg(x,y,k[i])$MSE
       
     }
     colnames(v)=paste("vif.x",1:dim(x)[2],sep="")
