@@ -2,15 +2,15 @@ ridgereg_k <- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
     print('Wrong input, please try again!')
-    return(ridgereg.k) }
+    return(ridgereg_k) }
     
   if ((is.vector(x)) ) {
      print('Dimension of explanatory variables is not suitable')
-     return(ridgereg.k) }
+     return(ridgereg_k) }
         
    if (dim(x)[2]<=1) {
      print('Dimension of explanatory variables is not suitable')
-     return(ridgereg.k)
+     return(ridgereg_k)
         
   } else {
     
@@ -50,9 +50,9 @@ ridgereg_k <- function(x,y,a,b) {
   ridgereg$k=k[i-1]
   last_k=ridgereg$k
   
-  k_vif=vif.k(x,y,0,last_k)$k_vif
-  k_beta=vif.k(x,y,0,last_k)$k_beta
-  k_stdbeta =vif.k(x,y,0,last_k)$k_stdbeta
+  k_vif=vif_k(x,y,0,last_k)$k_vif
+  k_beta=vif_k(x,y,0,last_k)$k_beta
+  k_stdbeta =vif_k(x,y,0,last_k)$k_stdbeta
   
   print(k_vif)
   print(k_beta)
