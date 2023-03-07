@@ -1,6 +1,6 @@
 Package: ridgregextra
 Type: Package
-Title: Finds bias for ridge reg
+Title: Ridge Regression Parameter Estimation
 Version: 0.1.0
 Author: Filiz Karadag, Hakan Savas Sazak, Olgun Aydin
 Maintainer: Olgun Aydin <olgun.aydin@pg.edu.pl>
