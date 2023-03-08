@@ -61,7 +61,7 @@ vif_k<- function(x,y,a,b) {
   }
 
   z <- list(viftable = viftable,betatable=betatable,stdbetatable=stdbetatable,
-            k_vif=k_vif,k_mse=k_mse, k_beta= k_beta,k_stdbeta=k_stdbeta)
+            k_vif=k_vif,k_mse=k_mse)
   return(z)
 }
    
