@@ -33,3 +33,15 @@ devtools::load_all()
 ## Example usage of the package.
 
 - TBA
+
+
+
+
+library(isdals)
+data(bodyfat)
+x=bodyfat[,-1]
+y=bodyfat[,1]
+
+library("mctest")
+x=Hald[,-1]
+y=Hald[,1]
