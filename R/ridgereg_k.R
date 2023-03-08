@@ -1,3 +1,22 @@
+
+
+#' Calculating composite indicator automatically step by step
+#'
+#' @name calc_compindex
+#'
+#' @description Calculates composite indicator by excluding the least significant variable at each step.
+#'
+#' @param x A Dataframe
+#' @param avg_type Choosing average type. So far "simple", "geometric" and "harmonic" average are available
+#' @param scaling_method Standardization or normalization technique. So far "min-max" and "standardization" are available
+#' @param vif_threshold Threshold for VIF. Based on this threshold variables from input data (x) are excluded for the calculations.
+#' @param si_diff Tolerance for normalized Si calculation. Can be between 0 and 1
+#'
+#' @return A list of lists
+#'
+#' @examples
+#' calc_compindex(x, avg_type = "simple", scaling_method = "min-max", vif_threshold = NULL, si_diff = 0.1)
+
 ridgereg_k <- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
@@ -53,14 +72,16 @@ ridgereg_k <- function(x,y,a,b) {
   k_vif=vif_k(x,y,0,last_k)$k_vif
   k_beta=vif_k(x,y,0,last_k)$k_beta
   k_stdbeta =vif_k(x,y,0,last_k)$k_stdbeta
-  
+  print("k_vif")
   print(k_vif)
+  print("k_beta")
   print(k_beta)
+  print("k_stdbeta")
   print(k_stdbeta)
 
   vif_plot <- plot_ly(k_vif, x= ~k)
-  ridgetrace_plot = plot_ly(k_beta, x= ~k)
-  stdbeta_plot = plot_ly(k_stdbeta, x= ~k)
+  ridgetrace_plot = plot_ly(as.dataframe(k_beta), x= ~k)
+  stdbeta_plot = plot_ly(as.dataframe(k_stdbeta), x= ~k)
   
   for(i in 2:dim(k_vif)[2])
   {
