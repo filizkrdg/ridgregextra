@@ -80,8 +80,8 @@ ridgereg_k <- function(x,y,a,b) {
   print(k_stdbeta)
 
   vif_plot <- plot_ly(k_vif, x= ~k)
-  ridgetrace_plot = plot_ly(as.dataframe(k_beta), x= ~k)
-  stdbeta_plot = plot_ly(as.dataframe(k_stdbeta), x= ~k)
+  ridgetrace_plot = plot_ly(k_beta, x= ~k)
+  stdbeta_plot = plot_ly(k_stdbeta, x= ~k)
   
   for(i in 2:dim(k_vif)[2])
   {
