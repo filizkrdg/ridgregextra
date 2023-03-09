@@ -2,28 +2,33 @@
 % Please edit documentation in R/ridgereg_k.R
 \name{ridgereg_k}
 \alias{ridgereg_k}
-\title{Ridge regression using alternative techniques}
+\title{Ridge regression results with an automatically selected k}
 \usage{
 ridgereg_k(x, y, a, b)
 }
 \arguments{
-\item{x}{A Dataframe. Input variables for regression model. It should minium contain two columns.}
+\item{x}{Explanatory variables (Dataframe, matrix)}
 
-\item{y}{Output variable for regression model}
+\item{y}{Dependent variables (Dataframe, vector)}
 
-\item{a}{Lower boundary for bias}
+\item{a}{Lower bound of k}
 
-\item{b}{Upper boundary for bias}
+\item{b}{Upper bound of k}
 }
 \value{
 A list of lists
 }
 \description{
-Ridge regression using alternative techniques.
+Ridge regression with a selected constant k
 }
 \examples{
+library("mctest")
+x=Hald[,-1]
+y=Hald[,1]
+ridgereg_k(x,y,a=0,b=1)
+
 library(isdals)
-data(bodyfat)
 x=bodyfat[,-1]
 y=bodyfat[,1]
+ridgereg_k(x,y,a=0,b=1)
 }
