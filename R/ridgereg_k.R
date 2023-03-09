@@ -1,21 +1,31 @@
 
 
-#' Calculating composite indicator automatically step by step
+#' Ridge regression results with an automatically selected k
 #'
-#' @name calc_compindex
+#' @name ridgereg_k
 #'
-#' @description Calculates composite indicator by excluding the least significant variable at each step.
+#' @description Ridge regression with a selected constant k
 #'
-#' @param x A Dataframe
-#' @param avg_type Choosing average type. So far "simple", "geometric" and "harmonic" average are available
-#' @param scaling_method Standardization or normalization technique. So far "min-max" and "standardization" are available
-#' @param vif_threshold Threshold for VIF. Based on this threshold variables from input data (x) are excluded for the calculations.
-#' @param si_diff Tolerance for normalized Si calculation. Can be between 0 and 1
+#' @param x Explanatory variables (Dataframe, matrix)
+#' @param y Dependent variables (Dataframe, vector)
+#' @param a Lower bound of k
+#' @param b Upper bound of k
+#' 
 #'
 #' @return A list of lists
 #'
 #' @examples
-#' calc_compindex(x, avg_type = "simple", scaling_method = "min-max", vif_threshold = NULL, si_diff = 0.1)
+#' library("mctest")
+#'	x=Hald[,-1]
+#'	y=Hald[,1]
+#' ridgereg_k(x,y,a=0,b=1)
+#'
+#' library(isdals)
+#  data(bodyfat)
+#'	x=bodyfat[,-1]
+#'	y=bodyfat[,1]
+#' ridgereg_k(x,y,a=0,b=1)
+
 
 ridgereg_k <- function(x,y,a,b) {
   
