@@ -1,5 +1,4 @@
 
-
 #' Ridge regression results with an automatically selected k
 #'
 #' @name ridgereg_k
@@ -11,6 +10,7 @@
 #' @param a Lower bound of k
 #' @param b Upper bound of k
 #' 
+
 #'
 #' @return A list of lists
 #'

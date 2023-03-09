@@ -1,47 +1,57 @@
-# Ridge_Reg
+# ridgregextra: An R package for ridge regression parameter estimation
 
-
-## Installing package directly from Github
-
-- Please make sure that devtools package is installed.
-- Since this repo is private, you need to create personal token to install the package directly from Github.
-- To get personal access token, please follow the setups shown here. visit this url: https://github.com/settings/tokens
-- After creating the token, use following command to install the package directly from Github.
-
-```
-devtools::install_github("filizkrdg/Ridge_Reg",
-                          ref="main",
-                          auth_token = "your_access_token"
-                          )
-library(Ridge_Reg)                          
-                        
-```
-
+-> More info about package to be added here.
 
 ## Installing the package using Github Desktop (Recomended)
+
+Only follow the steps below at the first step
 
 - Please install Github Desktop (https://desktop.github.com/)
 - Clone the repository
 - Open the project in RStudio
-- Run the following command
+
+Next time,
+- Please open Github Desktop and click "Fetch".
+- If the repo is updated, you will see information. In this case please click "Pull" button.
+- Finally please run following command.
 
 ```
 devtools::load_all()
 ```
-- Now, its ready to use.
+
 
 ## Example usage of the package.
 
-- TBA
+You can use `isdals` package to have example data to test `ridgregextra` package. Please make sure that you installed the package.
 
+- Prepare the dataset  
 
-
-
+```
 library(isdals)
 data(bodyfat)
 x=bodyfat[,-1]
 y=bodyfat[,1]
+```  
 
+- Run ` ridgereg_k`  function to get coefficients by using alternative approach to traditional ridge regression techniques.
+
+```
+ridgereg_k(x,y,0,1)
+
+```
+
+You can use `mctest` package to have example data to test `ridgregextra` package. Please make sure that you installed the package.
+
+- Prepare the dataset  
+
+```
 library("mctest")
 x=Hald[,-1]
 y=Hald[,1]
+```  
+
+- Run ridgereg_k function to get coefficients by using alternative approach to traditional ridge regression techniques.
+
+```
+ridgereg_k(x,y,0,1)
+```
