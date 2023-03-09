@@ -1,23 +1,31 @@
 
-
-#' Ridge regression using alternative techniques
+#' Ridge regression results with an automatically selected k
 #'
 #' @name ridgereg_k
 #'
-#' @description Ridge regression using alternative techniques.
+#' @description Ridge regression with a selected constant k
 #'
-#' @param x A Dataframe. Input variables for regression model. It should minium contain two columns.
-#' @param y Output variable for regression model
-#' @param a Lower boundary for bias
-#' @param b Upper boundary for bias
+#' @param x Explanatory variables (Dataframe, matrix)
+#' @param y Dependent variables (Dataframe, vector)
+#' @param a Lower bound of k
+#' @param b Upper bound of k
+#' 
+
 #'
 #' @return A list of lists
 #'
 #' @examples
+#' library("mctest")
+#'	x=Hald[,-1]
+#'	y=Hald[,1]
+#' ridgereg_k(x,y,a=0,b=1)
+#'
 #' library(isdals)
-#' data(bodyfat)
-#' x=bodyfat[,-1]
-#' y=bodyfat[,1]
+#  data(bodyfat)
+#'	x=bodyfat[,-1]
+#'	y=bodyfat[,1]
+#' ridgereg_k(x,y,a=0,b=1)
+
 
 ridgereg_k <- function(x,y,a,b) {
   
