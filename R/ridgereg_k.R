@@ -1,21 +1,23 @@
 
 
-#' Calculating composite indicator automatically step by step
+#' Ridge regression using alternative techniques
 #'
-#' @name calc_compindex
+#' @name ridgereg_k
 #'
-#' @description Calculates composite indicator by excluding the least significant variable at each step.
+#' @description Ridge regression using alternative techniques.
 #'
-#' @param x A Dataframe
-#' @param avg_type Choosing average type. So far "simple", "geometric" and "harmonic" average are available
-#' @param scaling_method Standardization or normalization technique. So far "min-max" and "standardization" are available
-#' @param vif_threshold Threshold for VIF. Based on this threshold variables from input data (x) are excluded for the calculations.
-#' @param si_diff Tolerance for normalized Si calculation. Can be between 0 and 1
+#' @param x A Dataframe. Input variables for regression model. It should minium contain two columns.
+#' @param y Output variable for regression model
+#' @param a Lower boundary for bias
+#' @param b Upper boundary for bias
 #'
 #' @return A list of lists
 #'
 #' @examples
-#' calc_compindex(x, avg_type = "simple", scaling_method = "min-max", vif_threshold = NULL, si_diff = 0.1)
+#' library(isdals)
+#' data(bodyfat)
+#' x=bodyfat[,-1]
+#' y=bodyfat[,1]
 
 ridgereg_k <- function(x,y,a,b) {
   
