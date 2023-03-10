@@ -1,3 +1,31 @@
+
+#' Ridge regression tables in the range of given lower and upper bounds of k values
+#'
+#' @name vif_k
+#'
+#' @description Ridge regression tables in the range of given lower and upper bounds of k values
+#'
+#' @param x Explanatory variables (Dataframe, matrix)
+#' @param y Dependent variables (Dataframe, vector)
+#' @param a Lower bound of k
+#' @param b Upper bound of k
+#' 
+
+#'
+#' @return A list of lists
+#'
+#' @examples
+#' library("mctest")
+#'	x=Hald[,-1]
+#'	y=Hald[,1]
+#' vif_k(x,y,a=0,b=1)
+#'
+#' library(isdals)
+#  data(bodyfat)
+#'	x=bodyfat[,-1]
+#'	y=bodyfat[,1]
+#' vif_k(x,y,a=0,b=1)
+
 vif_k<- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
