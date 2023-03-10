@@ -1,3 +1,32 @@
+
+#' Ridge regression results with a manually selected k value
+#'
+#' @name ridge_reg
+#'
+#' @description Ridge regression with a manually selected k value
+#'
+#' @param x Explanatory variables (Dataframe, matrix)
+#' @param y Dependent variables (Dataframe, vector)
+#' @param k Ridge parameter
+#' 
+#' 
+
+#'
+#' @return A list of lists
+#'
+#' @examples
+#' library("mctest")
+#'	x=Hald[,-1]
+#'	y=Hald[,1]
+#' ridge_reg(x,y,a=0,b=1)
+#'
+#' library(isdals)
+#  data(bodyfat)
+#'	x=bodyfat[,-1]
+#'	y=bodyfat[,1]
+#' ridge_reg(x,y,a=0,b=1)
+
+
 ridge_reg <- function(x,y,k) {
   
   #Standard Ridge Regression
