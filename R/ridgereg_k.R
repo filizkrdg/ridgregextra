@@ -72,7 +72,7 @@ ridgereg_k <- function(x,y,a,b) {
     }
     
     kk <- k[i-1]
-    print(c(kk,v[i-1,]))
+  #  print(c(kk,v[i-1,]))
   }
   
   ridgereg <- ridge_reg(x,y,k[i-1])
