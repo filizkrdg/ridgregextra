@@ -1,9 +1,9 @@
 
-#' Ridge regression results with an automatically selected k
+#' Ridge regression results with an automatically selected k value
 #'
 #' @name ridgereg_k
 #'
-#' @description Ridge regression with a selected constant k
+#' @description Ridge regression with a selected k value
 #'
 #' @param x Explanatory variables (Dataframe, matrix)
 #' @param y Dependent variables (Dataframe, vector)
