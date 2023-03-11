@@ -27,6 +27,7 @@ k <- 0.1
 ridge_reg(x,y,k)
 
 library(isdals)
+data(bodyfat)
 x <- bodyfat[,-1]
 y <- bodyfat[,1]
 k <- 0.1

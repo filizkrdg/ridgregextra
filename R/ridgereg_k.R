@@ -13,6 +13,13 @@
 
 #'
 #' @return A list of lists
+#' @export
+#' 
+#' @import isdals
+#' @import mctest
+#' @import plotly
+#' @importFrom plotly layout
+#' @importFrom stats pf sd
 #'
 #' @examples
 #' library("mctest")
@@ -21,11 +28,10 @@
 #' ridgereg_k(x,y,a=0,b=1)
 #'
 #' library(isdals)
-#  data(bodyfat)
+#' data(bodyfat)
 #' x <- bodyfat[,-1]
 #' y <- bodyfat[,1]
 #' ridgereg_k(x,y,a=0,b=1)
-
 
 ridgereg_k <- function(x,y,a,b) {
   

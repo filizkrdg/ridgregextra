@@ -28,6 +28,7 @@ y <- Hald[,1]
 ridgereg_k(x,y,a=0,b=1)
 
 library(isdals)
+data(bodyfat)
 x <- bodyfat[,-1]
 y <- bodyfat[,1]
 ridgereg_k(x,y,a=0,b=1)
