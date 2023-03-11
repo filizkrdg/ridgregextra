@@ -16,15 +16,17 @@
 #'
 #' @examples
 #' library("mctest")
-#'	x=Hald[,-1]
-#'	y=Hald[,1]
-#' ridge_reg(x,y,a=0,b=1)
+#'	x <- Hald[,-1]
+#'	y <- Hald[,1]
+#'	k <- 0.1
+#' ridge_reg(x,y,k)
 #'
 #' library(isdals)
 #  data(bodyfat)
-#'	x=bodyfat[,-1]
-#'	y=bodyfat[,1]
-#' ridge_reg(x,y,a=0,b=1)
+#'	x <- bodyfat[,-1]
+#'	y <- bodyfat[,1]
+#'	k <- 0.1
+#' ridge_reg(x,y,k)
 
 
 ridge_reg <- function(x,y,k) {

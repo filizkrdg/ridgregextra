@@ -16,14 +16,14 @@
 #'
 #' @examples
 #' library("mctest")
-#'	x=Hald[,-1]
-#'	y=Hald[,1]
+#' x <- Hald[,-1]
+#' y <- Hald[,1]
 #' vif_k(x,y,a=0,b=1)
 #'
 #' library(isdals)
 #  data(bodyfat)
-#'	x=bodyfat[,-1]
-#'	y=bodyfat[,1]
+#' x <- bodyfat[,-1]
+#' y <- bodyfat[,1]
 #' vif_k(x,y,a=0,b=1)
 
 vif_k<- function(x,y,a,b) {
