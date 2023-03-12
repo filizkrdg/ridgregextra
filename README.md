@@ -60,6 +60,6 @@ ridgereg_k(x,y,0,1)
 
 ## Citation
 
-- Kutner, M.H., Nachtsheim, C.J., Neter, J., Li, W., 2004, Applied Linear Statistical Models.
-- F. Karadağ and H.S. Sazak, “R Algorithm for Ridge Parameter Estimation in Ridge Regression” Why R? Turkey 2022 Conference, online, Verbal, Summary Text, pp.13, 2022. (https://www.nobelyayin.com/why-r-turkiye-2022-konferansi-18447.html)
+- Kutner, M.H., Nachtsheim, C.J., Neter, J., Li, W., Applied Linear Statistical Models, pp.430-440, 2004.
+- Karadağ, F. and Sazak, H.S., “R Algorithm for Ridge Parameter Estimation in Ridge Regression” Why R? Turkey 2022 Conference, online, Verbal, Summary Text, p.13, 2022. (https://www.nobelyayin.com/why-r-turkiye-2022-konferansi-18447.html)
 
