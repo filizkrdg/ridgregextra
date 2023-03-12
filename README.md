@@ -1,6 +1,7 @@
 # ridgregextra: An R package for ridge regression parameter estimation
 
-- The package includes ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) provided by the vif_k function for k ridge parameter values generated between certain lower and upper bound values. In addition, the ridge_reg function provides users the ridge regression results for a manually entered k value. This package which also includes the ridgereg_k function, presents a system that automatically determines the k value in a certain range and gives the ridge regression results.
+- This package includes a procedure finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as in Kutner et al. (2004). The package which also includes the ridgereg_k function, presents a system that automatically determines the k value in a certain range and gives the ridge regression results. It gives ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) provided by the vif_k function for k ridge parameter values generated between certain lower and upper bound values. In addition, the ridge_reg function provides users the ridge regression results for a manually entered k value. Finally it shows three sets of graphs consisting k versus VIF values,  regression coefficents and standard errors of them.
+- This package was presented for the first time in "Why R? Turkey 2022" conference.
 
 ## Installing the package using Github Desktop (Recomended)
 
@@ -55,3 +56,10 @@ y=Hald[,1]
 ```
 ridgereg_k(x,y,0,1)
 ```
+
+
+## Citation
+
+- Kutner, M.H., Nachtsheim, C.J., Neter, J., Li, W., 2004, Applied Linear Statistical Models.
+- F. Karadağ and H.S. Sazak, “R Algorithm for Ridge Parameter Estimation in Ridge Regression” Why R? Turkey 2022 Conference, online, Verbal, Summary Text, pp.13, 2022. (https://www.nobelyayin.com/why-r-turkiye-2022-konferansi-18447.html)
+
