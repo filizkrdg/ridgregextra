@@ -1,6 +1,6 @@
 # ridgregextra: An R package for ridge regression parameter estimation
 
--> More info about package to be added here.
+- The package includes ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) provided by the vif_k function for k ridge parameter values generated between certain lower and upper bound values. In addition, the ridge_reg function provides users the ridge regression results for a manually entered k value. This package which also includes the ridgereg_k function, presents a system that automatically determines the k value in a certain range and gives the ridge regression results.
 
 ## Installing the package using Github Desktop (Recomended)
 
