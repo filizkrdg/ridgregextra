@@ -1,23 +1,18 @@
 # ridgregextra: An R package for ridge regression parameter estimation
 
-- This package includes a procedure finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as in Kutner et al. (2004). The package which also includes the ridgereg_k function, presents a system that automatically determines the k value in a certain range and gives the ridge regression results. It gives ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) provided by the vif_k function for k ridge parameter values generated between certain lower and upper bound values. In addition, the ridge_reg function provides users the ridge regression results for a manually entered k value. Finally it shows three sets of graphs consisting k versus VIF values,  regression coefficents and standard errors of them.
-- This package was presented for the first time in "Why R? Turkey 2022" conference.
+`ridgregextra` provides functionalities for finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as stressed Applied Linear Statistical Models (Kutner et al., 2004). The package includes the `ridgereg_k` function, presents a system that automatically determines the k value in a certain range defined by the user and provides detailed ridge regression results. `ridgereg_k` also provides ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) using `vif_k` function for k ridge parameter values generated between certain lower and upper bound values. 
 
-## Installing the package using Github Desktop (Recomended)
+In addition, the `ridge_reg` function provides users the ridge regression results for a manually entered k value. Finally `ridgregextra` provides three sets of graphs consisting k versus VIF values,  regression coefficents and standard errors of them.
 
-Only follow the steps below at the first step
+`ridgregextra` was presented for the first time in "Why R? Turkey 2022" conference.
 
-- Please install Github Desktop (https://desktop.github.com/)
-- Clone the repository
-- Open the project in RStudio
+## Installing `ridgregextra`
 
-Next time,
-- Please open Github Desktop and click "Fetch".
-- If the repo is updated, you will see information. In this case please click "Pull" button.
-- Finally please run following command.
+Please make sure that you installed `devtools` package.
+
 
 ```
-devtools::load_all()
+devtools::install_github(filizkrdg/ridgregextra)
 ```
 
 
@@ -58,7 +53,7 @@ ridgereg_k(x,y,0,1)
 ```
 
 
-## Citation
+## References
 
 - Kutner, M.H., Nachtsheim, C.J., Neter, J., Li, W., Applied Linear Statistical Models, pp.430-440, 2004.
 - Karadağ, F. and Sazak, H.S., “R Algorithm for Ridge Parameter Estimation in Ridge Regression” Why R? Turkey 2022 Conference, online, Verbal, Summary Text, p.13, 2022. (https://www.nobelyayin.com/why-r-turkiye-2022-konferansi-18447.html)
