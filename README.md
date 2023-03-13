@@ -1,6 +1,6 @@
 # ridgregextra: An R package for ridge regression parameter estimation
 
-`ridgregextra` provides functionalities for finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as stressed Applied Linear Statistical Models (Kutner et al., 2004). The package includes the `ridgereg_k` function, presents a system that automatically determines the k value in a certain range defined by the user and provides detailed ridge regression results. `ridgereg_k` also provides ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) using `vif_k` function for k ridge parameter values generated between certain lower and upper bound values. 
+`ridgregextra` focuses on finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as stressed "Applied Linear Statistical Models" (Kutner et al., 2004). The package includes the `ridgereg_k` function, presents a system that automatically determines the k value in a certain range defined by the user and provides detailed ridge regression results. `ridgereg_k` also provides ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) using `vif_k` function for k ridge parameter values generated between certain lower and upper bound values. 
 
 In addition, the `ridge_reg` function provides users the ridge regression results for a manually entered k value. Finally `ridgregextra` provides three sets of graphs consisting k versus VIF values,  regression coefficents and standard errors of them.
 
