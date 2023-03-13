@@ -62,7 +62,7 @@ ridgereg_k(x,y,0,1)
 
 For any questions please contact:
 
-Filiz Karadag, filiz.karadag@ege.edu.tr
-Hakan Savas Sazak, hakan.savas.sazak@ege.edu.tr
-Olgun Aydin, olgun.aydin@pg.edu.pl
+- Filiz Karadag, filiz.karadag@ege.edu.tr
+- Hakan Savas Sazak, hakan.savas.sazak@ege.edu.tr
+- Olgun Aydin, olgun.aydin@pg.edu.pl
 
