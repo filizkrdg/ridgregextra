@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Filiz Karadag, Hakan Savas Sazak, Olgun Aydin
 Maintainer: Olgun Aydin <olgun.aydin@pg.edu.pl>
 Description: It is a package that provides alternative approach for finding optimum parameters of ridge regression. This package includes a procedure finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as in Kutner et al. (2004). It presents a system that automatically determines the k value in a certain range and gives the ridge regression results. Finally it shows three sets of graphs consisting k versus VIF values, regression coefficents and standard errors of them.
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/filizkrdg/Ridge_Reg
