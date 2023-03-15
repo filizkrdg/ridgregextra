@@ -9,7 +9,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-6123-1214")),
     person("Olgun", "Aydin", , "olgun.aydin@pg.edu.pl", role = c("cre"),
            comment = c(ORCID = "0000-0002-7090-0931")))
-Description: It is a package that provides alternative approach for finding optimum parameters of ridge regression. This package focuses on finding the ridge parameter value k which makes the vif values closest to 1, while keeping them above 1 as addressed in Applied Linear Statistical Models (Kutner et al., 2004). Moreover, the package offers end-to-end functionality to find optimum k value and presents the detailed ridge regression results. Finally it shows three sets of graphs consisting k versus vif values, regression coefficients and standard errors of them. Michael Kutner, Christopher Nachtsheim, John Neter, William Li (2004, ISBN:978-0073108742).
+Description: It is a package that provides alternative approach for finding optimum parameters of ridge regression. This package focuses on finding the ridge parameter value k which makes the variance inflation factors closest to 1, while keeping them above 1 as addressed by Michael Kutner, Christopher Nachtsheim, John Neter, William Li (2004, ISBN:978-0073108742). Moreover, the package offers end-to-end functionality to find optimum k value and presents the detailed ridge regression results. Finally it shows three sets of graphs consisting k versus variance inflation factors, regression coefficients and standard errors of them. 
 License: GPL (>= 3)
 Encoding: UTF-8
 URL: https://github.com/filizkrdg/ridgregextra
