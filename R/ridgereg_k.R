@@ -36,15 +36,15 @@
 ridgereg_k <- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
-    print('Wrong input, please try again!')
+    message('Wrong input, please try again!')
     return(ridgereg_k) }
     
   if ((is.vector(x)) ) {
-     print('Dimension of explanatory variables is not suitable')
-     return(ridgereg_k) }
+    message('Dimension of explanatory variables is not suitable')
+    return(ridgereg_k) }
         
    if (dim(x)[2]<=1) {
-     print('Dimension of explanatory variables is not suitable')
+     message('Dimension of explanatory variables is not suitable')
      return(ridgereg_k)
         
   } else {
@@ -73,12 +73,10 @@ ridgereg_k <- function(x,y,a,b) {
       b <- k[i]
       a<-k[i-1]
       k <- as.matrix(k)
-      # print(cbind(k,v))
       
     }
     
     kk <- k[i-1]
-  #  print(c(kk,v[i-1,]))
   }
   
   ridgereg <- ridge_reg(x,y,k[i-1])
@@ -88,12 +86,6 @@ ridgereg_k <- function(x,y,a,b) {
   k_vif=vif_k(x,y,0,last_k)$k_vif
   k_beta=vif_k(x,y,0,last_k)$k_beta
   k_stdbeta =vif_k(x,y,0,last_k)$k_stdbeta
-  print("k_vif")
-  print(k_vif)
-  print("k_beta")
-  print(k_beta)
-  print("k_stdbeta")
-  print(k_stdbeta)
 
   vif_plot <- plot_ly(k_vif, x= ~k)
   ridgetrace_plot = plot_ly(k_beta, x= ~k)
@@ -125,7 +117,8 @@ ridgereg_k <- function(x,y,a,b) {
              zerolinewidth = 2, 
              gridcolor = 'ffff'))
   
-  #    fig <- fig %>%layout(annotations = annotations) 
-  print(fig)
-  return(ridgereg)
+  final_list <- list(ridgereg,fig)
+  names(final_list) <- c("ridge_reg_results","graph")
+  
+  return(final_list)
 }

@@ -30,7 +30,7 @@
 vif_k<- function(x,y,a,b) {
   
   if ((a>b) | (a<0) | (b>1)){
-    print('Wrong input, please try again!')
+    message('Wrong input, please try again!')
     
     return(vif_k)
     
