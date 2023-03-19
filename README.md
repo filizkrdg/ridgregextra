@@ -8,17 +8,26 @@ In addition, the `ridge_reg` function provides users the ridge regression result
 
 ## Installing `ridgregextra`
 
-Please make sure that you installed `devtools` package.
+
+Please make sure that you installed `devtools` package. 
+
+If you would like to install dev version of the package, please use following command.
 
 
 ```
 devtools::install_github(filizkrdg/ridgregextra)
 ```
 
+If you would like to install package from CRAN, please use following command.
+
+```
+devtools::install_packages("ridgregextra")
+```
+
 
 ## Example usage of the package.
 
-You can use `isdals` package to have example data to test `ridgregextra` package. Please make sure that you installed the package.
+You can use `isdals` package to have example data to test `ridgregextra` package. `isdals` package is being installed, while you are installing `ridgregextra` package, so you don't have to install the package again.
 
 - Prepare the dataset  
 
@@ -36,7 +45,7 @@ ridgereg_k(x,y,0,1)
 
 ```
 
-You can use `mctest` package to have example data to test `ridgregextra` package. Please make sure that you installed the package.
+You can use `mctest` package to have example data to test `ridgregextra` package. `mctest` package is being installed, while you are installing `ridgregextra` package, so you don't have to install the package again.
 
 - Prepare the dataset  
 
