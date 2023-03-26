@@ -1,7 +1,7 @@
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/thestats?color=green)](https://cran.r-project.org/package=ridgregextra)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/thestats?color=green)](https://cran.r-project.org/package=ridgregextra)
-[![](http://cranlogs.r-pkg.org/badges/thestats?color=green)](https://cran.r-project.org/package=ridgregextra)
-[![](http://cranlogs.r-pkg.org/badges/last-week/thestats?color=green)](https://cran.r-project.org/package=ridgregextra)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
+[![](http://cranlogs.r-pkg.org/badges/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
+[![](http://cranlogs.r-pkg.org/badges/last-week/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
 
 # ridgregextra: An R package for ridge regression parameter estimation
 
