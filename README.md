@@ -43,7 +43,7 @@ x=bodyfat[,-1]
 y=bodyfat[,1]
 ```  
 
-- Run ` ridgereg_k`  function to get coefficients by using alternative approach to traditional ridge regression techniques.
+- Run `ridgereg_k`  function to get coefficients by using alternative approach to traditional ridge regression techniques.
 
 ```
 ridgereg_k(x,y,0,1)
@@ -60,7 +60,7 @@ x=Hald[,-1]
 y=Hald[,1]
 ```  
 
-- Run ridgereg_k function to get coefficients by using alternative approach to traditional ridge regression techniques.
+- Run `ridgereg_k` function to get coefficients by using alternative approach to traditional ridge regression techniques.
 
 ```
 ridgereg_k(x,y,0,1)
