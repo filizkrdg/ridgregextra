@@ -11,7 +11,14 @@ In addition, the `ridge_reg` function provides users the ridge regression result
 
 `ridgregextra` was presented for the first time in "Why R? Turkey 2022" conference.
 
-## Installing `ridgregextra`
+## Installing `ridgregextra` from CRAN
+
+```
+install.packages("ridgregextra")
+```
+
+
+## Installing `ridgregextra` development version
 
 
 Please make sure that you installed `devtools` package. 
