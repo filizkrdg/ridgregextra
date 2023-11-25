@@ -30,12 +30,6 @@ If you would like to install dev version of the package, please use following co
 devtools::install_github(filizkrdg/ridgregextra)
 ```
 
-If you would like to install package from CRAN, please use following command.
-
-```
-devtools::install_packages("ridgregextra")
-```
-
 
 ## Example usage of the package.
 
