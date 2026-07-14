@@ -2,6 +2,8 @@
 [![](https://cranlogs.r-pkg.org/badges/grand-total/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
 [![](https://cranlogs.r-pkg.org/badges/last-week/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
 
+<img src="img/logo_dwmmlridge.jpeg" width="300" align="right">
+
 # ridgregextra: An R package for ridge regression parameter estimation
 
 `ridgregextra` focuses on finding the ridge parameter value k which makes the VIF values closest to 1 while keeping them above 1 as stressed "Applied Linear Statistical Models" (Kutner et al., 2004). The package includes the `ridgereg_k` function, presents a system that automatically determines the k value in a certain range defined by the user and provides detailed ridge regression results. `ridgereg_k` also provides ridge regression tables (VIF, MSE, R2, Beta, Stdbeta) using `vif_k` function for k ridge parameter values generated between certain lower and upper bound values. 
