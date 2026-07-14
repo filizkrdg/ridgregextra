@@ -2,7 +2,8 @@
 [![](https://cranlogs.r-pkg.org/badges/grand-total/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
 [![](https://cranlogs.r-pkg.org/badges/last-week/ridgregextra?color=green)](https://cran.r-project.org/package=ridgregextra)
 
-<img src="img/ridgregextra_logo.png" width="300" align="right">
+<img src="img/ridgregextra_logo.png" align="right" width="300" />
+
 
 # ridgregextra: An R package for ridge regression parameter estimation
 
